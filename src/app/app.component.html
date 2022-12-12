@@ -1,0 +1,92 @@
+<h1>Aprendendo como usar animações do lottie em Angular</h1>
+
+<div class="template">
+  <div class="referencia">
+    <p>Todo material usado aqui foi baseado nesta página</p>
+    <a
+      href="https://dev.to/riapacheco/adding-animated-illustrations-to-an-angular-app-with-lottie-ngx-lottie-4j0o"
+      target="_blank"
+    >
+      aqui</a
+    >
+  </div>
+
+  <div class="card">
+    <h2>Passo 1:criando o arquivo Lottie</h2>
+    <p>caso precise criar um arquivo angular novo:</p>
+    <p class="code_sml">$ ng new testando-lottie --skip-tests</p>
+    <div class="referencia">
+      <p>Acessando o</p>
+      <a href="https://lottiefiles.com/featured" target="_blank">Lottie</a>
+      <p>
+        na seção de animações gratuitas, em seguida selecione uma animação de
+        sua escolha, baixe na opção 'lottie JSON' dando o nome que achar melhor,
+        exemplo: animation.json.
+      </p>
+    </div>
+    <img src="/assets/imagem/exemplo_1.png" alt="Minha Figura" />
+    <p>
+      Crie uma pasta chamada lottie dentro da sua pasta 'src/assets', dentro
+      dessa pasta onde você irá localizar e guardar suas animações
+    </p>
+    <img src="/assets/imagem/exemplo_2.png" alt="Minha Figura" />
+  </div>
+
+  <div class="card">
+    <h2>Passo2:Criando sua estrutura para exibir sua animação</h2>
+    <p>
+      Para isso precisamos criar um componente que vai redenrizar nossa
+      animação, com o comando:
+    </p>
+    <p class="code_lg">$ ng g c shared/nome-de-componente-da-sua-escolha</p>
+    <div class="referencia">
+      <p>Chamando seu componente na</p>
+      <p class="destaque">app.component.html</p>
+    </div>
+    <img src="/assets/imagem/exemplo_3.png" alt="Minha Figura" />
+    <div class="referencia">
+      <p>Agora sua pasta do componente que foi criado, vá até</p>
+      <p class="destaque">nome-de-componente-da-sua-escolha.component.scss</p>
+      <p>e adicione esse estilo</p>
+    </div>
+    <div class="code_sml">
+      <p>:host</p>
+      <!-- <span>{</span> -->
+      <p>height: 100%;</p>
+      <p>overflow: hidden;</p>
+      <p>display: flex;</p>
+      <p>flex-flow: column nowrap;</p>
+      <p>align-items: center;</p>
+      <p>justify-content: center;</p>
+      <p>position: relative;</p>
+      <p>}</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Passo3:Instalando pacotes Lottie</h2>
+  <p>Usando o comando do npm installa o pacote Lottie</p>
+  <p class="code_sml">$ npm install lottie-web ngx-lottie</p>
+  <div class="referencia">
+    <p>Agora vamos adicionar o lottie ao arquivo</p>
+    <p class="destaque">app.module.ts</p>
+    <p>importando Lottie e o CommonModule</p>
+  </div>
+  <img src="/assets/imagem/exemplo_4.png" alt="Minha Figura" />
+</div>
+
+<div class="card">
+  <h2>Passo4:Adicionar a animação Lottie ao componente de tela Inicial </h2>
+  <div class="referencia">
+  <p>No arquivo</p>
+  <p class="destaque">nome-de-componente-da-sua-escolha.component.TS</p>
+  <p>, criando uma variavel que recebe o caminho da animação direto do assets e uma nova função que se vincula ao evento</p>
+  </div>
+  <img src="/assets/imagem/exemplo_5.png" alt="Minha Figura" />
+  <p>Iremos agora para o arquivo HTML do componente criado e criaremos o evento dentro de uma div</p>
+  <img src="/assets/imagem/exemplo_6.png" alt="Minha Figura" />
+</div>
+
+<p>E nosso exemplo de animação:</p>
+<app-splash-screen></app-splash-screen>
